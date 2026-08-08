@@ -52,6 +52,15 @@ If you need a holdout for scoring: read `sealed/` locally; never `git add` or pu
 - Organic releases: `datasets/organic/releases/YYYY-MM-DD-<slug>.json`.
 - Public intents: `datasets/synthetic/public/` only (no gold fields).
 
+## Before every commit
+
+- No `.env`, tokens, cookies, or Cloudflare credentials
+- No IPs, emails, phone numbers, or raw document text
+- No `sealed/` or `comms/` (gitignored — never force-add)
+- No raw server / CDN log dumps
+- Organic files only under `datasets/organic/releases/` after review
+- No home-directory paths or internal hostnames
+
 ## When blocked on live-site behavior
 
 Stop. File a short issue note for the website operator. Do not patch the storefront from this repo.
