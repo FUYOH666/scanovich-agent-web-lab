@@ -1,0 +1,15 @@
+Ask your AI agent:
+
+Open the unique probe URL assigned on:
+https://scanovich.ai/research/agent-web/bring-your-agent/
+
+Without using prior knowledge:
+
+1. What does the fetched page say the organization does?
+2. Which problems does it claim to address?
+3. Which claims are demonstrated vs experimental?
+4. Who should use it?
+5. What should it NOT be used for?
+6. Cite your sources from the fetched page only.
+
+This template is an operator prompt — not a scored answer key.

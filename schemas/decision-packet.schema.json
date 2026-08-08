@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scanovich.ai/research/schemas/scanovich.decision_packet.v1.json",
+  "title": "scanovich.decision_packet.v1",
+  "description": "JSON Schema for Decision Packet objects as published on live machine surfaces. Field names only — this file is not a narrative answer key.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema", "updated_at", "packets"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "scanovich.decision_packet.v1"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "publisher": { "type": "string" },
+        "information_provider": { "type": "string" },
+        "commercial_relationship": { "type": "string" },
+        "independently_verified": { "type": "boolean" }
+      }
+    },
+    "updated_at": {
+      "type": "string",
+      "description": "Date or datetime of packet set update."
+    },
+    "ontology_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "note": { "type": "string" },
+    "packets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/packet" }
+    }
+  },
+  "$defs": {
+    "packet": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "problem",
+        "buyer",
+        "inputs",
+        "outputs",
+        "constraints",
+        "fit_when",
+        "unfit_when",
+        "evidence_ids",
+        "contact_action",
+        "updated_at"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "problem": { "type": "string" },
+        "buyer": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "inputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "outputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "constraints": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "fit_when": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "unfit_when": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "contact_action": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "action": { "type": "string" },
+            "url": { "type": "string" },
+            "mailto": { "type": "string" }
+          }
+        },
+        "updated_at": { "type": "string" }
+      }
+    }
+  }
+}

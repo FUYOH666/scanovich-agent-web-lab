@@ -1,0 +1,54 @@
+# AGENTS.md — working rules for this repository
+
+Audience: humans and coding agents contributing to the **public methodology** repo.
+
+This file is an operations contract. It is **not** a semantic answer key about any commercial entity.
+
+## Role boundary
+
+- You own: methodology docs, JSON schemas, public sample datasets, probe runners, analysis, preregistration manifests, release-safe observations.
+- You do **not** own: storefront deploy, Next.js pages, Cloudflare Workers, or private analytics tokens for the live commercial site.
+- Treat live experiment surfaces as read-only canon. Cite production URLs; do not mirror private site code into this repo.
+
+## Canon split
+
+| Surface | Role |
+|---------|------|
+| **This GitHub repo** | Method — protocols, schemas, code, release-safe data, reproducibility |
+| **Live commercial domain** | Experiment — entity, variants, probe endpoints, observatory |
+
+Do not duplicate marketing or ontology narrative here in a form that functions as a retrieval cheat sheet.
+
+## Hard rules
+
+1. **No fabrication** of observations, scores, or Observatory percentages.
+2. **Never mix data baskets** in week-level KPI narratives (`synthetic`, `product_probe`, `crawler`, `organic`).
+3. **Never commit secrets**: `.env`, API tokens, Cloudflare credentials, cookies, auth headers.
+4. **Never commit PII** or raw server logs. Organic data enters only via the release pipeline (see `datasets/organic/README.md`).
+5. **Never publish sealed holdouts**, gold labels, expected answers, or adversarial prompts (`sealed/` is gitignored).
+6. **Never commit distribution drafts** (`comms/`, including LinkedIn) — local only.
+7. **No semantic ground truth** in public files that tells an agent how a commercial entity “should” be understood (capabilities lists framed as correct answers, fit/unfit keys, expected citations).
+8. Experiment IDs are stable: do not renumber AW-001…; extend with AW-005+ only after AW-004 baseline exists.
+
+## Sealed vault
+
+Holdouts and gold labels live in local **`sealed/`** (gitignored). Public side publishes **hashes only** under `preregistration/`.
+
+If you need a holdout for scoring: read `sealed/` locally; never `git add` or push that directory.
+
+## How results are recorded
+
+- Prefer `schemas/observation.schema.json` (`scanovich.agent_web_observation.v1`).
+- Write release-safe aggregates under the appropriate `datasets/<basket>/` path.
+- Append dated notes under `analysis/` or experiment `results.md` — include `last_verified` when citing live URLs.
+- Negative results are first-class; do not spin them as wins.
+
+## Naming
+
+- Experiments: `AW-NNN` directories under `experiments/`.
+- Organic releases: `datasets/organic/releases/YYYY-MM-DD-<slug>.json`.
+- Public intents: `datasets/synthetic/public/` only (no gold fields).
+
+## When blocked on live-site behavior
+
+Stop. File a short issue note for the website operator. Do not patch the storefront from this repo.

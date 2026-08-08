@@ -1,0 +1,20 @@
+{"intent_id":"PUB-001","intent_class":"branded","difficulty":"easy","prompt":"Without using prior knowledge, open the assigned probe URL and state what the site says it does."}
+{"intent_id":"PUB-002","intent_class":"branded","difficulty":"easy","prompt":"From the live page only: list claims that are marked experimental versus demonstrated."}
+{"intent_id":"PUB-003","intent_class":"branded","difficulty":"ambiguous","prompt":"Who should use this site according to the page you fetched? Who should not?"}
+{"intent_id":"PUB-004","intent_class":"branded","difficulty":"multi_constraint","prompt":"Cite sources from the fetched page for each factual claim you make. If a claim lacks a source on the page, mark it unsupported."}
+{"intent_id":"PUB-005","intent_class":"branded","difficulty":"easy","prompt":"What is Bring Your Agent asking a human operator to do?"}
+{"intent_id":"PUB-006","intent_class":"capability","difficulty":"easy","prompt":"Find whether the live site publishes a machine-readable capabilities or decision-packet surface. Quote the URL you used."}
+{"intent_id":"PUB-007","intent_class":"capability","difficulty":"ambiguous","prompt":"Does the page distinguish indexing/crawler behavior from live user-facing agent fetch? Quote the wording."}
+{"intent_id":"PUB-008","intent_class":"capability","difficulty":"multi_constraint","prompt":"Identify any explicit constraints or unfit conditions stated on the fetched representation. Do not invent extras."}
+{"intent_id":"PUB-009","intent_class":"capability","difficulty":"easy","prompt":"What representations (HTML, Markdown, JSON-LD, Decision Packet) does the AW-004 brief say are under test?"}
+{"intent_id":"PUB-010","intent_class":"capability","difficulty":"ambiguous","prompt":"According to the methodology page you fetched, is Markdown described as a replacement for HTML or an alternate?"}
+{"intent_id":"PUB-011","intent_class":"workflow","difficulty":"easy","prompt":"Summarize the steps a human should take to run Bring Your Agent with their own AI tool."}
+{"intent_id":"PUB-012","intent_class":"workflow","difficulty":"ambiguous","prompt":"If an agent cannot fetch the probe URL, what should the operator record according to the experiment framing?"}
+{"intent_id":"PUB-013","intent_class":"workflow","difficulty":"multi_constraint","prompt":"Describe how results from synthetic harness runs should be labeled relative to organic visitor agents."}
+{"intent_id":"PUB-014","intent_class":"workflow","difficulty":"easy","prompt":"Where should a participant look for the live Observatory scoreboard status?"}
+{"intent_id":"PUB-015","intent_class":"workflow","difficulty":"ambiguous","prompt":"What does the brief say about mixing data baskets when reporting weekly metrics?"}
+{"intent_id":"PUB-016","intent_class":"vertical","difficulty":"easy","prompt":"Does the research hub mention a live proof leaf related to trade or customs? Quote or say not found."}
+{"intent_id":"PUB-017","intent_class":"vertical","difficulty":"ambiguous","prompt":"Is the experiment claiming production coverage for banking, insurance, and legal as equal live verticals? Support from the page only."}
+{"intent_id":"PUB-018","intent_class":"vertical","difficulty":"multi_constraint","prompt":"Separate: (a) research claims about agent retrieval, (b) commercial offers, (c) items marked experimental. Use only the fetched page."}
+{"intent_id":"PUB-019","intent_class":"other","difficulty":"easy","prompt":"Report which HTTP representation you believe you received (HTML vs Markdown vs JSON) and why."}
+{"intent_id":"PUB-020","intent_class":"other","difficulty":"multi_constraint","prompt":"State one thing the page says the experiment is not trying to manipulate (e.g. ranking). Quote it."}

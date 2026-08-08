@@ -1,0 +1,48 @@
+# --- Non-public (never push) ---
+
+# Holdouts, gold labels, raw organic ingest
+sealed/
+.sealed/
+
+# Distribution drafts (LinkedIn etc.) — local only
+comms/
+
+# Secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.*
+*secrets*
+*secret*
+
+# Raw ingestion before scrub (organic pipeline)
+**/raw/
+**/raw/**
+datasets/organic/raw/
+*.log
+server-logs/
+ae-dumps/
+
+# Operator scratch / local notes
+private/
+.local/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Python / node local
+__pycache__/
+.venv/
+venv/
+node_modules/
+.pytest_cache/
+.ruff_cache/
+
+# Probe scratch outputs with possible headers
+probes/runners/.cache/

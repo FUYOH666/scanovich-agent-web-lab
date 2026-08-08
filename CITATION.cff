@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Scanovich Agent Web Lab"
+message: "If you use this methodology, schemas, or datasets, please cite this repository."
+type: software
+authors:
+  - name: "Scanovich"
+    website: "https://scanovich.ai/"
+repository-code: "https://github.com/FUYOH666/scanovich-agent-web-lab"
+url: "https://scanovich.ai/research/agent-web/"
+abstract: >-
+  Open methodology and release-safe datasets for experiments on how AI agents
+  discover, interpret, compare, and act on information published on the live web.
+  Companion to live experiments on scanovich.ai (Bring Your Agent / AW-004).
+keywords:
+  - agent-web
+  - llm
+  - methodology
+  - decision-packets
+  - information-retrieval
+license: "MIT AND CC-BY-4.0"
+version: "0.1.0"
+date-released: "2026-08-08"

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scanovich.ai/research/schemas/scanovich.agent_web_observation.v1.json",
+  "title": "scanovich.agent_web_observation.v1",
+  "description": "Release-safe observation of agent/crawler interaction with a live Agent Web experiment. No PII, no raw headers dumps, no gold labels.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "experiment_id",
+    "timestamp",
+    "origin",
+    "variant"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "scanovich.agent_web_observation.v1"
+    },
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^AW-[0-9]{3}$",
+      "description": "Stable experiment identifier, e.g. AW-004."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 capture time (UTC preferred)."
+    },
+    "origin": {
+      "type": "string",
+      "enum": ["synthetic", "product_probe", "crawler", "organic"],
+      "description": "Data basket. Never mix baskets in week-level KPI narratives."
+    },
+    "agent_family": {
+      "type": "string",
+      "description": "Coarse family label when known (e.g. openai, anthropic, google, perplexity, unknown)."
+    },
+    "product": {
+      "type": "string",
+      "description": "Product or tool name when known (e.g. chatgpt, claude, gemini, perplexity, browser_agent)."
+    },
+    "intent_id": {
+      "type": "string",
+      "description": "Public sample id or opaque holdout id (never embed gold text)."
+    },
+    "intent_class": {
+      "type": "string",
+      "enum": ["branded", "capability", "workflow", "vertical", "other"]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "ambiguous", "multi_constraint"]
+    },
+    "variant": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "unknown"],
+      "description": "A=HTML, B=HTML+JSON-LD, C=Markdown, D=Decision Packet."
+    },
+    "canon_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Live URL observed (no query secrets)."
+    },
+    "representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requested": {
+          "type": "string",
+          "enum": ["html", "markdown", "json", "jsonld", "decision_packet", "unknown"]
+        },
+        "served": {
+          "type": "string",
+          "enum": ["html", "markdown", "json", "jsonld", "decision_packet", "unknown"]
+        }
+      }
+    },
+    "exposure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fetch_success": { "type": "boolean" },
+        "http_status": { "type": "integer", "minimum": 100, "maximum": 599 },
+        "bytes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "understanding": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Labeled understanding scores from human review of paste-back; omit if not labeled.",
+      "properties": {
+        "entity": { "type": "boolean" },
+        "capabilities_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "constraints_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "unsupported_claims": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "consideration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "included": { "type": "boolean" },
+        "rank": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "present": { "type": "boolean" }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "occurred": { "type": "boolean" },
+        "kind": {
+          "type": "string",
+          "enum": ["none", "contact", "tool_call", "human_handoff", "other"]
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional operator notes. No PII, no secrets, no gold answers."
+    }
+  }
+}

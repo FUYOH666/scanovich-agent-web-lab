@@ -1,0 +1,15 @@
+{
+  "experiment_id": "AW-004",
+  "preregistration": "preregistration/experiment-config.json",
+  "live_urls": [
+    "https://scanovich.ai/research/agent-web/aw-004/",
+    "https://scanovich.ai/research/agent-web/bring-your-agent/",
+    "https://scanovich.ai/research/agent-web/observatory/"
+  ],
+  "variants": ["A", "B", "C", "D"],
+  "baskets": ["synthetic", "product_probe", "crawler", "organic"],
+  "observation_schema": "schemas/observation.schema.json",
+  "public_intents": "datasets/synthetic/public/intents_v0.1.jsonl",
+  "holdouts": "sealed",
+  "gold_labels": false
+}

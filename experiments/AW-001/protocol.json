@@ -1,0 +1,12 @@
+{
+  "experiment_id": "AW-001",
+  "live_urls": [
+    "https://scanovich.ai/research/agent-web/time-replication/"
+  ],
+  "compare": [
+    { "client": "browser_like", "accept": "text/html" },
+    { "client": "markdown_accept", "accept": "text/markdown" }
+  ],
+  "record": ["http_status", "content_type", "bytes", "origin_basket"],
+  "gold_labels": false
+}
