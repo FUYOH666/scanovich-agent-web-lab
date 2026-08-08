@@ -39,8 +39,30 @@ Independent origins (external agents, crawlers, researchers) outweigh large volu
 
 HTML is the source of truth on the live site. Markdown and JSON are alternates, not replacements.
 
+### Phases
+
+| Phase | Focus |
+|------:|-------|
+| 0 | Surface verification (Accept / client → served representation) |
+| 1 | Controlled A–D comparison |
+| 2 | External agent observations (BYA / product probes) |
+
+Phase 0 finding (2026-08-08): Markdown Accept alone did not yield Markdown on the four research surfaces — HTML was served. See `results/` and `analysis/2026-08-08-probe-dry-run.md`.
+
 Live brief: https://scanovich.ai/research/agent-web/aw-004/  
 `last_verified`: 2026-08-08
+
+## Units of record
+
+| Unit | Schema | Meaning |
+|------|--------|---------|
+| **Fetch** | `schemas/fetch.schema.json` | One HTTP/server exposure |
+| **Observation** | `schemas/observation.schema.json` | Agent understanding → action |
+| **Run** | `schemas/run.schema.json` | Intent + environment + fetches + observation |
+
+One agent run may produce many fetches. Do not count every fetch as an observation.
+
+Record `environment.model_version` (or honest `unknown`) — product labels alone are not stable over months.
 
 ## Data baskets
 
@@ -59,17 +81,23 @@ Never mix baskets in week-level KPI narratives.
 Public web material can inflate agent benchmarks when models retrieve the benchmark itself (search-time contamination). Therefore:
 
 - ~20 public intent examples (prompts only)
-- Holdouts + adversarial prompts + gold labels stay in a **sealed vault**
+- Holdouts + adversarial prompts + scoring rubrics stay in **`sealed/`** (gitignored)
 - `preregistration/holdout-manifest.sha256` publishes the digest only
 - This repo must not ship expected answers or semantic ground-truth cheat sheets
 
 See `docs/sealed-vault.md` and `preregistration/`.
 
-## Observations
+## Scoring freeze (no post-hoc gold)
 
-Unit of record: `schemas/observation.schema.json` (`scanovich.agent_web_observation.v1`).
+```text
+freeze intents → freeze rubric → HASH → run models → blind annotation → score
+```
 
-Organic path: private ingest → scrub → normalize → manual review → `datasets/organic/releases/`.
+Do not author “correct answers” after seeing model outputs. Rubrics use `required_concepts` / `must_not_claim` / `constraint_checks` (see `schemas/scoring-rubric.schema.json`).
+
+## Organic releases
+
+Private ingest → scrub → normalize → manual review → `datasets/organic/releases/`.
 
 ## Disclaimers
 

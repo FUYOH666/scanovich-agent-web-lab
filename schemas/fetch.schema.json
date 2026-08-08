@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scanovich.ai/research/schemas/scanovich.agent_web_fetch.v1.json",
+  "title": "scanovich.agent_web_fetch.v1",
+  "description": "Single HTTP/server exposure event: request → representation → HTTP result. Not an agent-behavior observation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "timestamp", "canon_url", "representation", "exposure"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "scanovich.agent_web_fetch.v1"
+    },
+    "fetch_id": { "type": "string" },
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^AW-[0-9]{3}$"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["0", "1", "2", "unknown"],
+      "description": "0=surface verification, 1=controlled representation comparison, 2=external agent observations."
+    },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "origin": {
+      "type": "string",
+      "enum": ["synthetic", "product_probe", "crawler", "organic"]
+    },
+    "canon_url": { "type": "string", "format": "uri" },
+    "variant": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "unknown"]
+    },
+    "representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "served"],
+      "properties": {
+        "requested": {
+          "type": "string",
+          "enum": ["html", "markdown", "json", "jsonld", "decision_packet", "unknown"]
+        },
+        "served": {
+          "type": "string",
+          "enum": ["html", "markdown", "json", "jsonld", "decision_packet", "unknown"]
+        }
+      }
+    },
+    "exposure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fetch_success"],
+      "properties": {
+        "fetch_success": { "type": "boolean" },
+        "http_status": { "type": "integer", "minimum": 100, "maximum": 599 },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "content_type": { "type": "string" }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

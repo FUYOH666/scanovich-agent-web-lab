@@ -1,104 +1,188 @@
 {
-  "schema": "scanovich.agent_web_observation.batch.v0",
+  "schema": "scanovich.agent_web_fetch.batch.v1",
   "experiment_id": "AW-004",
+  "phase": "0",
+  "phase_name": "surface_verification",
   "origin": "synthetic",
-  "timestamp": "2026-08-08T082742Z",
+  "timestamp": "2026-08-08T08:27:42Z",
+  "finding": "Requesting Markdown did not by itself produce Markdown on these four research surfaces; HTML was served.",
+  "environment": {
+    "agent_family": "harness",
+    "product": "curl",
+    "model": "none",
+    "model_version": "none",
+    "retrieval_mode": "none",
+    "tooling_mode": "harness",
+    "locale": "unknown"
+  },
   "fetches": [
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-01",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/",
       "variant": "unknown",
-      "representation": { "requested": "html", "served": "html" },
+      "representation": {
+        "requested": "html",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 41745
+        "bytes": 41745,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
-    }
-,
+      "notes": "Phase 0 surface verification; variant not assigned"
+    },
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-02",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/",
       "variant": "unknown",
-      "representation": { "requested": "markdown", "served": "html" },
+      "representation": {
+        "requested": "markdown",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 41745
+        "bytes": 41745,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
-    }
-,
+      "notes": "Phase 0 surface verification; variant not assigned"
+    },
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-03",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/aw-004/",
       "variant": "unknown",
-      "representation": { "requested": "html", "served": "html" },
+      "representation": {
+        "requested": "html",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 39747
+        "bytes": 39747,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
-    }
-,
+      "notes": "Phase 0 surface verification; variant not assigned"
+    },
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-04",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/aw-004/",
       "variant": "unknown",
-      "representation": { "requested": "markdown", "served": "html" },
+      "representation": {
+        "requested": "markdown",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 39747
+        "bytes": 39747,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
-    }
-,
+      "notes": "Phase 0 surface verification; variant not assigned"
+    },
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-05",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/bring-your-agent/",
       "variant": "unknown",
-      "representation": { "requested": "html", "served": "html" },
+      "representation": {
+        "requested": "html",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 34844
+        "bytes": 34844,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
-    }
-,
+      "notes": "Phase 0 surface verification; variant not assigned"
+    },
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-06",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/bring-your-agent/",
       "variant": "unknown",
-      "representation": { "requested": "markdown", "served": "html" },
+      "representation": {
+        "requested": "markdown",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 34844
+        "bytes": 34844,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
-    }
-,
+      "notes": "Phase 0 surface verification; variant not assigned"
+    },
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-07",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/observatory/",
       "variant": "unknown",
-      "representation": { "requested": "html", "served": "html" },
+      "representation": {
+        "requested": "html",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 42915
+        "bytes": 42915,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
-    }
-,
+      "notes": "Phase 0 surface verification; variant not assigned"
+    },
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "aw004-phase0-08",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "2026-08-08T08:27:42Z",
+      "origin": "synthetic",
       "canon_url": "https://scanovich.ai/research/agent-web/observatory/",
       "variant": "unknown",
-      "representation": { "requested": "markdown", "served": "html" },
+      "representation": {
+        "requested": "markdown",
+        "served": "html"
+      },
       "exposure": {
         "fetch_success": true,
         "http_status": 200,
-        "bytes": 42915
+        "bytes": 42915,
+        "content_type": "text/html; charset=utf-8"
       },
-      "notes": "content-type: text/html; charset=utf-8"
+      "notes": "Phase 0 surface verification; variant not assigned"
     }
-
   ]
 }

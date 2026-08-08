@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.1.1 — 2026-08-08
+
+- AW-004 phases documented (0 surface verification → 1 A–D → 2 external agents)
+- Phase 0 finding clarified: Markdown Accept alone served HTML on research surfaces
+- Split schemas: `fetch` / `run` / `observation` (+ public `scoring-rubric` shape)
+- Observation/run `environment` metadata (`model_version`, retrieval/tooling mode, locale, …)
+- Scoring freeze: rubrics before runs; no post-hoc gold labels
+- Sealed hash now covers holdouts + adversarial + rubrics
+
 ## v0.1.0 — 2026-08-08
 
 - Initial public methodology repository

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scanovich.ai/research/schemas/scanovich.agent_web_scoring_rubric.v1.json",
+  "title": "scanovich.agent_web_scoring_rubric.v1",
+  "description": "Public shape of a sealed scoring rubric. Rubric instances (with concepts/checks) stay sealed and must be frozen before model runs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "intent_id", "rubric"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "scanovich.agent_web_scoring_rubric.v1"
+    },
+    "intent_id": { "type": "string" },
+    "frozen_at": { "type": "string", "format": "date-time" },
+    "rubric": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required_concepts": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "acceptable_variants": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "must_not_claim": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "required_sources": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Evidence expectations (e.g. must cite fetched page). Not gold prose."
+        },
+        "constraint_checks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

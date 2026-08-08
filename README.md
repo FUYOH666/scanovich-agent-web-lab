@@ -26,7 +26,8 @@ https://scanovich.ai/research/agent-web/
 
 - Public sample intents: [`datasets/synthetic/public/`](datasets/synthetic/public/)
 - Baskets & release rules: [`datasets/README.md`](datasets/README.md)
-- Observation schema: [`schemas/observation.schema.json`](schemas/observation.schema.json)
+- Schemas: [`fetch`](schemas/fetch.schema.json) · [`run`](schemas/run.schema.json) · [`observation`](schemas/observation.schema.json)
+- Phase 0 snapshot: [`results/`](results/)
 
 ### METHODOLOGY
 

@@ -25,10 +25,12 @@ Do not duplicate marketing or ontology narrative here in a form that functions a
 2. **Never mix data baskets** in week-level KPI narratives (`synthetic`, `product_probe`, `crawler`, `organic`).
 3. **Never commit secrets**: `.env`, API tokens, Cloudflare credentials, cookies, auth headers.
 4. **Never commit PII** or raw server logs. Organic data enters only via the release pipeline (see `datasets/organic/README.md`).
-5. **Never publish sealed holdouts**, gold labels, expected answers, or adversarial prompts (`sealed/` is gitignored).
+5. **Never publish sealed holdouts**, scoring rubrics, expected answers, or adversarial prompts (`sealed/` is gitignored).
 6. **Never commit distribution drafts** (`comms/`, including LinkedIn) — local only.
-7. **No semantic ground truth** in public files that tells an agent how a commercial entity “should” be understood (capabilities lists framed as correct answers, fit/unfit keys, expected citations).
-8. Experiment IDs are stable: do not renumber AW-001…; extend with AW-005+ only after AW-004 baseline exists.
+7. **No post-hoc gold:** freeze rubrics before scored runs; never rewrite rubrics after seeing model answers.
+8. **No semantic ground truth** in public files that tells an agent how a commercial entity “should” be understood (capabilities lists framed as correct answers, fit/unfit keys, expected citations).
+9. Experiment IDs are stable: do not renumber AW-001…; extend with AW-005+ only after AW-004 baseline exists.
+10. Prefer `fetch` / `run` / `observation` schemas; do not treat HTTP fetch batches as agent observations.
 
 ## Sealed vault
 

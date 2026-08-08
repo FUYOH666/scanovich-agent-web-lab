@@ -3,6 +3,14 @@
   "title": "Representations for AI agents",
   "started_on": "2026-08-08",
   "status": "open",
+  "phase": {
+    "current": "0",
+    "definitions": {
+      "0": "surface_verification",
+      "1": "controlled_representation_comparison",
+      "2": "external_agent_observations"
+    }
+  },
   "live": {
     "hub": "https://scanovich.ai/research/agent-web/",
     "brief": "https://scanovich.ai/research/agent-web/aw-004/",
@@ -23,12 +31,28 @@
     "public_path": "datasets/synthetic/public/",
     "sealed_digest_file": "preregistration/holdout-manifest.sha256"
   },
-  "primary_metrics": [
-    "exposure.fetch_success_by_variant_origin_family",
-    "understanding.entity_when_labeled",
-    "understanding.capabilities_score_mean_when_labeled",
-    "understanding.constraints_score_mean_when_labeled"
-  ],
+  "scoring": {
+    "post_hoc_gold_labels": false,
+    "require_rubric_freeze_before_runs": true,
+    "rubric_schema": "schemas/scoring-rubric.schema.json",
+    "order": [
+      "freeze_intents",
+      "freeze_scoring_rubric",
+      "hash",
+      "run_models",
+      "blind_annotation",
+      "score"
+    ]
+  },
+  "primary_metrics": {
+    "phase_0": ["fetch.requested_vs_served", "fetch.fetch_success"],
+    "phase_1_2": [
+      "exposure_by_variant_origin_family",
+      "understanding.entity_when_labeled",
+      "understanding.capabilities_score_mean_when_labeled",
+      "understanding.constraints_score_mean_when_labeled"
+    ]
+  },
   "secondary_metrics": ["citation.present", "action.occurred"],
   "stopping_condition": {
     "any_of": [
@@ -40,7 +64,12 @@
   "contamination_policy": {
     "publish_gold_labels": false,
     "publish_holdout_prompts_before_close": false,
+    "publish_scoring_rubrics_before_close": false,
     "agents_md_ground_truth": false
   },
-  "observation_schema": "schemas/observation.schema.json"
+  "schemas": {
+    "fetch": "schemas/fetch.schema.json",
+    "observation": "schemas/observation.schema.json",
+    "run": "schemas/run.schema.json"
+  }
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Public synthetic probe: fetch live AW-004 / BYA / hub surfaces.
-# Origin basket: synthetic. No secrets. No gold labels.
+# AW-004 Phase 0 — surface verification (fetch.v1), not A/B/C/D comparison.
+# Origin: synthetic. No secrets. No gold labels.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
@@ -8,6 +8,7 @@ OUT_DIR="${ROOT}/results"
 mkdir -p "${OUT_DIR}"
 
 STAMP="$(date -u +"%Y-%m-%dT%H%M%SZ")"
+ISO_TS="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 OUT_JSON="${OUT_DIR}/aw004_surfaces_${STAMP}.json"
 
 URLS=(
@@ -27,16 +28,29 @@ trap 'rm -rf "${tmp}"' EXIT
 
 {
   echo '{'
-  echo "  \"schema\": \"scanovich.agent_web_observation.batch.v0\","
+  echo "  \"schema\": \"scanovich.agent_web_fetch.batch.v1\","
   echo "  \"experiment_id\": \"AW-004\","
+  echo "  \"phase\": \"0\","
+  echo "  \"phase_name\": \"surface_verification\","
   echo "  \"origin\": \"synthetic\","
-  echo "  \"timestamp\": \"${STAMP}\","
+  echo "  \"timestamp\": \"${ISO_TS}\","
+  echo '  "environment": {'
+  echo '    "agent_family": "harness",'
+  echo '    "product": "curl",'
+  echo '    "model": "none",'
+  echo '    "model_version": "none",'
+  echo '    "retrieval_mode": "none",'
+  echo '    "tooling_mode": "harness",'
+  echo '    "locale": "unknown"'
+  echo '  },'
   echo '  "fetches": ['
 } > "${OUT_JSON}"
 
 first=1
+idx=0
 for url in "${URLS[@]}"; do
   for accept in "${ACCEPT_MODES[@]}"; do
+    idx=$((idx + 1))
     body="${tmp}/body"
     hdr="${tmp}/hdr"
     rm -f "${body}" "${hdr}"
@@ -71,27 +85,33 @@ for url in "${URLS[@]}"; do
     [[ "${accept}" == "text/markdown" ]] && req="markdown"
     success=false
     [[ "${code}" =~ ^2 ]] && success=true
-
-    err_note=""
-    if [[ -s "${tmp}/curl.err" ]]; then
-      err_note=" curl_error=$(tr '\n' ' ' < "${tmp}/curl.err" | sed 's/"/\\"/g')"
-    fi
+    fid="$(printf 'aw004-phase0-%02d' "${idx}")"
 
     if [[ "${first}" -eq 0 ]]; then
       echo ',' >> "${OUT_JSON}"
     fi
     first=0
+    # escape ctype for JSON
+    ctype_json="${ctype//\\/\\\\}"
+    ctype_json="${ctype_json//\"/\\\"}"
     cat >> "${OUT_JSON}" <<EOF
     {
+      "schema": "scanovich.agent_web_fetch.v1",
+      "fetch_id": "${fid}",
+      "experiment_id": "AW-004",
+      "phase": "0",
+      "timestamp": "${ISO_TS}",
+      "origin": "synthetic",
       "canon_url": "${url}",
       "variant": "unknown",
       "representation": { "requested": "${req}", "served": "${served}" },
       "exposure": {
         "fetch_success": ${success},
         "http_status": ${code},
-        "bytes": ${bytes}
+        "bytes": ${bytes},
+        "content_type": "${ctype_json}"
       },
-      "notes": "content-type: ${ctype}${err_note}"
+      "notes": "Phase 0 surface verification; variant not assigned"
     }
 EOF
   done

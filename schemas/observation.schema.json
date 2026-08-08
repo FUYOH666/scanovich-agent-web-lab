@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://scanovich.ai/research/schemas/scanovich.agent_web_observation.v1.json",
   "title": "scanovich.agent_web_observation.v1",
-  "description": "Release-safe observation of agent/crawler interaction with a live Agent Web experiment. No PII, no raw headers dumps, no gold labels.",
+  "description": "Agent-behavior observation (understanding → consideration → citation → action). HTTP exposure belongs in fetch.v1; bundle via run.v1. No PII, no gold labels.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -17,33 +17,59 @@
       "type": "string",
       "const": "scanovich.agent_web_observation.v1"
     },
+    "observation_id": { "type": "string" },
+    "run_id": {
+      "type": "string",
+      "description": "Parent run (scanovich.agent_web_run.v1)."
+    },
     "experiment_id": {
       "type": "string",
-      "pattern": "^AW-[0-9]{3}$",
-      "description": "Stable experiment identifier, e.g. AW-004."
+      "pattern": "^AW-[0-9]{3}$"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["0", "1", "2", "unknown"]
     },
     "timestamp": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO-8601 capture time (UTC preferred)."
+      "format": "date-time"
     },
     "origin": {
       "type": "string",
-      "enum": ["synthetic", "product_probe", "crawler", "organic"],
-      "description": "Data basket. Never mix baskets in week-level KPI narratives."
+      "enum": ["synthetic", "product_probe", "crawler", "organic"]
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Prefer honest unknown over omitting fields.",
+      "properties": {
+        "agent_family": { "type": "string" },
+        "product": { "type": "string" },
+        "product_version": { "type": "string" },
+        "model": { "type": "string" },
+        "model_version": { "type": "string" },
+        "retrieval_mode": {
+          "type": "string",
+          "enum": ["none", "web_search", "browsing", "tool_fetch", "unknown"]
+        },
+        "tooling_mode": {
+          "type": "string",
+          "enum": ["none", "browser_agent", "api", "harness", "unknown"]
+        },
+        "temperature": { "type": ["number", "null"] },
+        "locale": { "type": "string" },
+        "region": { "type": "string" }
+      }
     },
     "agent_family": {
       "type": "string",
-      "description": "Coarse family label when known (e.g. openai, anthropic, google, perplexity, unknown)."
+      "description": "Deprecated alias; prefer environment.agent_family."
     },
     "product": {
       "type": "string",
-      "description": "Product or tool name when known (e.g. chatgpt, claude, gemini, perplexity, browser_agent)."
+      "description": "Deprecated alias; prefer environment.product."
     },
-    "intent_id": {
-      "type": "string",
-      "description": "Public sample id or opaque holdout id (never embed gold text)."
-    },
+    "intent_id": { "type": "string" },
     "intent_class": {
       "type": "string",
       "enum": ["branded", "capability", "workflow", "vertical", "other"]
@@ -52,19 +78,26 @@
       "type": "string",
       "enum": ["easy", "ambiguous", "multi_constraint"]
     },
+    "repeat_index": {
+      "type": "integer",
+      "minimum": 1
+    },
     "variant": {
       "type": "string",
-      "enum": ["A", "B", "C", "D", "unknown"],
-      "description": "A=HTML, B=HTML+JSON-LD, C=Markdown, D=Decision Packet."
+      "enum": ["A", "B", "C", "D", "unknown"]
     },
     "canon_url": {
       "type": "string",
-      "format": "uri",
-      "description": "Live URL observed (no query secrets)."
+      "format": "uri"
+    },
+    "fetch_ids": {
+      "type": "array",
+      "items": { "type": "string" }
     },
     "representation": {
       "type": "object",
       "additionalProperties": false,
+      "description": "Optional summary of primary representation; prefer linked fetches for detail.",
       "properties": {
         "requested": {
           "type": "string",
@@ -79,6 +112,7 @@
     "exposure": {
       "type": "object",
       "additionalProperties": false,
+      "description": "Optional summary; prefer fetch.v1 records.",
       "properties": {
         "fetch_success": { "type": "boolean" },
         "http_status": { "type": "integer", "minimum": 100, "maximum": 599 },
@@ -88,7 +122,6 @@
     "understanding": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Labeled understanding scores from human review of paste-back; omit if not labeled.",
       "properties": {
         "entity": { "type": "boolean" },
         "capabilities_score": { "type": "number", "minimum": 0, "maximum": 1 },
@@ -122,9 +155,6 @@
         }
       }
     },
-    "notes": {
-      "type": "string",
-      "description": "Optional operator notes. No PII, no secrets, no gold answers."
-    }
+    "notes": { "type": "string" }
   }
 }

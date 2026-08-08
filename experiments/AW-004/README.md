@@ -6,6 +6,16 @@
 **Preregistration:** [`../../preregistration/AW-004.md`](../../preregistration/AW-004.md)  
 **last_verified:** 2026-08-08
 
-Variants A–D (HTML / HTML+JSON-LD / Markdown / Decision Packet). Humans copy a prompt into their AI; the agent hits a unique probe URL.
+## Phases
+
+| Phase | Status | Focus |
+|------:|--------|-------|
+| 0 | snapshot published | Surface verification (`fetch.v1`) |
+| 1 | pending | Controlled variants A–D |
+| 2 | pending | External agent observations |
+
+Variants A–D (HTML / HTML+JSON-LD / Markdown / Decision Packet) apply from **Phase 1**. Phase 0 only checks Accept/client → served representation.
+
+Phase 0 finding: Markdown Accept alone did not yield Markdown on hub / AW-004 / BYA / Observatory.
 
 This folder contains protocol shells only — **no expected answers**.

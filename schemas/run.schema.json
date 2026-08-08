@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scanovich.ai/research/schemas/scanovich.agent_web_run.v1.json",
+  "title": "scanovich.agent_web_run.v1",
+  "description": "One experimental run: intent + agent environment + zero or more fetches + optional observation. A single agent turn may produce many fetches.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "run_id", "experiment_id", "timestamp", "origin", "environment"],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "scanovich.agent_web_run.v1"
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Stable id for this run (UUID or lab-assigned)."
+    },
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^AW-[0-9]{3}$"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["0", "1", "2", "unknown"]
+    },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "origin": {
+      "type": "string",
+      "enum": ["synthetic", "product_probe", "crawler", "organic"]
+    },
+    "intent_id": { "type": "string" },
+    "intent_class": {
+      "type": "string",
+      "enum": ["branded", "capability", "workflow", "vertical", "other"]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "ambiguous", "multi_constraint"]
+    },
+    "repeat_index": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "1-based repetition index for the same intent × environment."
+    },
+    "variant": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "unknown"]
+    },
+    "environment": {
+      "$ref": "#/$defs/environment"
+    },
+    "fetch_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "References to scanovich.agent_web_fetch.v1 records."
+    },
+    "fetches": {
+      "type": "array",
+      "items": { "$ref": "scanovich.agent_web_fetch.v1.json" },
+      "description": "Inline fetches when not stored separately."
+    },
+    "observation_id": { "type": "string" },
+    "observation": {
+      "description": "Inline observation when not stored separately.",
+      "type": "object"
+    },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Reproducibility metadata. Prefer honest unknown over omitting fields.",
+      "properties": {
+        "agent_family": { "type": "string" },
+        "product": { "type": "string" },
+        "product_version": { "type": "string" },
+        "model": { "type": "string" },
+        "model_version": { "type": "string" },
+        "retrieval_mode": {
+          "type": "string",
+          "enum": [
+            "none",
+            "web_search",
+            "browsing",
+            "tool_fetch",
+            "unknown"
+          ]
+        },
+        "tooling_mode": {
+          "type": "string",
+          "enum": ["none", "browser_agent", "api", "harness", "unknown"]
+        },
+        "temperature": { "type": ["number", "null"] },
+        "locale": { "type": "string" },
+        "region": {
+          "type": "string",
+          "description": "Coarse region only (e.g. SEA, EU, US). No precise geo."
+        }
+      }
+    }
+  }
+}
