@@ -34,13 +34,14 @@ Do not duplicate marketing or ontology narrative here in a form that functions a
 
 ## Sealed vault
 
-Holdouts and gold labels live in local **`sealed/`** (gitignored). Public side publishes **hashes only** under `preregistration/`.
+Holdouts, adversarial prompts, and scoring rubrics live in local **`sealed/`** (gitignored). Public side publishes **hashes only** under `preregistration/`.
 
 If you need a holdout for scoring: read `sealed/` locally; never `git add` or push that directory.
 
 ## How results are recorded
 
-- Prefer `schemas/observation.schema.json` (`scanovich.agent_web_observation.v1`).
+- Prefer `fetch` / `run` / `observation` schemas (`schemas/README.md`).
+- Record `environment.model_version` (or honest `unknown`).
 - Write release-safe aggregates under the appropriate `datasets/<basket>/` path.
 - Append dated notes under `analysis/` or experiment `results.md` — include `last_verified` when citing live URLs.
 - Negative results are first-class; do not spin them as wins.
