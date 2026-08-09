@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.7 — 2026-08-09
+
+- Root `LICENSE` (MIT) for GitHub license detection + dual-license note → `LICENSES/`
+- CI: schema/hygiene validation + markdown link check
+- GitHub description covers AW-004…006; README clarifies B05 = prompt stability ≠ category width
+- PR template + `scripts/ci/validate.sh`
+
 ## v0.1.6 — 2026-08-09
 
 - Scrubbed AW-006 post–Buyer Language Bridge Perplexity remeasure

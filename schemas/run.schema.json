@@ -56,12 +56,12 @@
     },
     "fetches": {
       "type": "array",
-      "items": { "$ref": "scanovich.agent_web_fetch.v1.json" },
-      "description": "Inline fetches when not stored separately."
+      "items": { "type": "object" },
+      "description": "Inline fetch.v1 objects when not stored separately (see schemas/fetch.schema.json)."
     },
     "observation_id": { "type": "string" },
     "observation": {
-      "description": "Inline observation when not stored separately.",
+      "description": "Inline observation.v1 when not stored separately (see schemas/observation.schema.json).",
       "type": "object"
     },
     "notes": { "type": "string" }

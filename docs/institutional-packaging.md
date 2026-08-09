@@ -1,11 +1,15 @@
-# Institutional packaging note
+# Institutional packaging
 
-The public repository currently lives at:
+Public repository: https://github.com/FUYOH666/scanovich-agent-web-lab
 
-https://github.com/FUYOH666/scanovich-agent-web-lab
+| Layer | Role |
+|-------|------|
+| GitHub | Public methodology + release-safe results |
+| scanovich.ai | Live experiment instrument |
+| Local sealed / private site | Holdouts, gold, harness dumps, red-team |
 
-`CITATION.cff` lists author **Scanovich** / scanovich.ai. That is intentional for citation text.
+`CITATION.cff` author is **Scanovich** / scanovich.ai.
 
-A GitHub Organization such as `ScanovichAI` would remove the personal-namespace identity break for researchers and partners. As of 2026-08-08 the authenticated `gh` account has **no accessible `ScanovichAI` org**, so transfer is deferred.
+A GitHub Organization such as `ScanovichAI` would remove the personal-namespace break. Until then the repo remains under **FUYOH666** with redirects available if transferred later.
 
-When an org exists: transfer this repository early (low stars/forks), keep redirects, update `CITATION.cff` `repository-code`.
+License detection: root [`LICENSE`](../LICENSE) is MIT (GitHub-readable); documentation/datasets additionally under [`LICENSES/CC-BY-4.0.txt`](../LICENSES/CC-BY-4.0.txt).

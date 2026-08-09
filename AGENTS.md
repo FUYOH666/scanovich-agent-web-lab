@@ -55,12 +55,14 @@ If you need a holdout for scoring: read `sealed/` locally; never `git add` or pu
 
 ## Before every commit
 
+- Run `bash scripts/ci/validate.sh` (CI installs `jsonschema`; locally optional)
 - No `.env`, tokens, cookies, or Cloudflare credentials
 - No IPs, emails, phone numbers, or raw document text
 - No `sealed/` or `comms/` (gitignored — never force-add)
 - No raw server / CDN log dumps
 - Organic files only under `datasets/organic/releases/` after review
 - No home-directory paths or internal hostnames
+- Do not overclaim single-prompt stability (e.g. B05 5/5) as category ownership
 
 ## When blocked on live-site behavior
 
