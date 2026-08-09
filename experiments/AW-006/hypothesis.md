@@ -1,10 +1,10 @@
 # AW-006 hypothesis
 
-**H0 (after Perplexity half-baseline + OpenClaw smoke, 2026-08-09):**
+**H0 (after Perplexity baseline + post-bridge remeasure, 2026-08-09):**
 
-- Ultra-specific practice fingerprint is **engine-dependent** (smoke hit; Perplexity often miss).
-- Trade / customs dossier adjacency is the strongest Perplexity class so far (~15%).
-- Supplier-spreadsheet, evidence-conflict, and generic AI-docs classes: ~0% mention on Perplexity (N=100).
-- The live domain is not a default competitive shortlist pick against peers (e.g. Digicust appears in blobs).
+- Mid “private trade dossier” phrasing can stably cite `/customs/` (B05 = 5/5 on Perplexity).
+- Broad broker-tool / SaaS shortlist language still yields **0%** mentions after on-site Buyer Language Bridge v1.
+- trade_customs class did not meet lift targets (≥25–30%); this window 5% vs prior baseline ~15% — not claimed as bridge regression.
+- On-site GEO alone is insufficient for broad category ownership; next lever is **off-site evidence**.
 
-Non-claims: not SEO guarantees; not a multi-engine baseline until OpenAI half lands; raw answers stay private.
+Non-claims: not SEO guarantees; OpenAI half still pending; raw answers stay private.

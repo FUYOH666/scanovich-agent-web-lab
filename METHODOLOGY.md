@@ -101,7 +101,7 @@ Do not author “correct answers” after seeing model outputs. Rubrics use `req
 |----|-------|----------------|
 | AW-004 | Bring Your Agent / representations | `/research/agent-web/bring-your-agent/` |
 | AW-005 | Evidence Challenge EC-001 | `/research/agent-web/evidence-challenge/` + stats API |
-| AW-006 | AI-search citation baseline | Perplexity half-baseline scrubbed (4% overall); OpenAI half pending; no ranking claims |
+| AW-006 | AI-search citation baseline | Perplexity baseline + post-bridge remeasure scrubbed; broad targets not met; off-site evidence next; no ranking claims |
 
 Method shells: `experiments/AW-004/` … `AW-006/`.  
 EC-001 scorers/gold and AW-006 raw harness dumps stay private. Public lab may record **redacted aggregate counts**, scrubbed paste-backs, and (later) mention-rate summaries only.

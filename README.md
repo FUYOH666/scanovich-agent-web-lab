@@ -54,8 +54,8 @@ EC-001: cite the hub + scrubbed counts. **Gold / Worker scorer stay private.**
 **EC-001 (AW-005).** Hub + stats API live; aggregate counts only (gold private).  
 → [`analysis/2026-08-09-ec001-stats-glance.md`](analysis/2026-08-09-ec001-stats-glance.md)
 
-**AW-006.** Perplexity Sonar half-baseline (100 runs): **4%** overall mention rate; best class trade/customs ~**15%**; supplier / evidence-conflict / generic AI-docs **0%**. OpenClaw smoke showed engine variance on fingerprint prompts. OpenAI half + any L3 site variant still frozen.  
-→ [`analysis/2026-08-09-aw006-perplexity-baseline.md`](analysis/2026-08-09-aw006-perplexity-baseline.md) · [`experiments/AW-006/`](experiments/AW-006/)
+**AW-006.** Perplexity baseline **4%** overall; after Buyer Language Bridge remeasure: buyer-broad **12.5%** (mid B05 → `/customs/` at 5/5; broad broker **0%**); trade_customs **5%** — lift targets not met. Next lever: off-site evidence, not more on-site GEO. OpenAI half still pending.  
+→ [`analysis/2026-08-09-aw006-post-bridge-remeasure.md`](analysis/2026-08-09-aw006-post-bridge-remeasure.md) · [`experiments/AW-006/`](experiments/AW-006/)
 
 We publish rates and negative results. We do **not** claim guaranteed AI-search ranking.
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.6 — 2026-08-09
+
+- Scrubbed AW-006 post–Buyer Language Bridge Perplexity remeasure
+- buyer-broad 12.5% (B05 mid ladder 5/5 → `/customs/`; broad broker 0%); trade_customs 5% — targets not met
+- Method note: next lever is off-site evidence, not another on-site GEO pass
+- OpenAI half still pending; no ranking claims
+
 ## v0.1.5 — 2026-08-09
 
 - Scrubbed AW-006 Perplexity Sonar half-baseline (100 runs, 4% overall mention rate)

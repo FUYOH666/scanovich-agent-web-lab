@@ -1,7 +1,7 @@
 {
   "experiment_id": "AW-006",
   "title": "AI-search citation baseline",
-  "status": "perplexity_half_baseline_ingested_openai_pending",
+  "status": "post_bridge_remeasure_ingested_openai_pending",
   "live": {
     "lab_hub": "https://scanovich.ai/research/agent-web/"
   },
