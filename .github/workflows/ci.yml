@@ -38,7 +38,7 @@ jobs:
       - name: Link check
         uses: lycheeverse/lychee-action@v2
         with:
-          # Fail on broken internal/repo links; allow external live canon flakes
+          # Fail on broken links; tolerate rate limits
           args: >-
             --verbose
             --no-progress
@@ -46,8 +46,8 @@ jobs:
             --timeout 20
             --retry-wait-time 2
             --max-retries 2
-            --accept 200,206,429
-            --exclude-mail
+            --accept '200,206,429'
+            --include-mail=false
             --exclude 'https://github.com/ScanovichAI/.*'
             '**/*.md'
           fail: true
