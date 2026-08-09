@@ -19,6 +19,7 @@ This is surface verification only. It does **not** test assigned variants A–D,
 
 ## Interpretation bounds
 
+- On hub / AW-004 / BYA / Observatory paths, HTML-as-SoT with Markdown Accept → HTML is an **expected control** (Worker MD negotiation is elsewhere on the live domain). Not a bug report against those four surfaces.
 - Does not imply Markdown twins are absent everywhere on the commercial domain
 - Does not measure live ChatGPT/Claude fetch behavior
-- Useful as a negative/neutral control before Phase 1
+- Useful as a control before Phase 1 A–D comparison on probe URLs

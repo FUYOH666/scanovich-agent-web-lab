@@ -29,8 +29,9 @@ Do not duplicate marketing or ontology narrative here in a form that functions a
 6. **Never commit distribution drafts** (`comms/`, including LinkedIn) — local only.
 7. **No post-hoc gold:** freeze rubrics before scored runs; never rewrite rubrics after seeing model answers.
 8. **No semantic ground truth** in public files that tells an agent how a commercial entity “should” be understood (capabilities lists framed as correct answers, fit/unfit keys, expected citations).
-9. Experiment IDs are stable: do not renumber AW-001…; extend with AW-005+ only after AW-004 baseline exists.
+9. Experiment IDs are stable: do not renumber AW-001…. Document live experiments (AW-004, AW-005, …) as method shells; never import Worker scorers or gold.
 10. Prefer `fetch` / `run` / `observation` schemas; do not treat HTTP fetch batches as agent observations.
+11. Bridge with the private site: hub URLs + redacted aggregate counts may be published; KV/AE dumps, gold, and scorer code must not.
 
 ## Sealed vault
 

@@ -1,0 +1,25 @@
+{
+  "experiment_id": "AW-005",
+  "challenge_id": "EC-001",
+  "title": "Evidence Challenge #001",
+  "live": {
+    "hub": "https://scanovich.ai/research/agent-web/evidence-challenge/",
+    "stats": "https://scanovich.ai/api/evidence-challenge/001/stats",
+    "lab_hub": "https://scanovich.ai/research/agent-web/"
+  },
+  "baskets": ["synthetic", "product_probe", "crawler", "organic"],
+  "public_artifacts": [
+    "experiments/AW-005/",
+    "analysis/ notes with redacted stats",
+    "datasets/organic/releases/ scrubbed paste-backs"
+  ],
+  "private_site_only": [
+    "worker_scorer",
+    "gold_labels",
+    "kv_raw",
+    "analytics_engine_dumps",
+    "source_pack_internals"
+  ],
+  "bridge": "Private site PUBLIC_LAB_BRIDGE.md — hub URL + redacted stats counts may cross; gold/scorer stay private",
+  "parallel_with": ["AW-004"]
+}

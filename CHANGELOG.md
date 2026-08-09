@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.2 — 2026-08-09
+
+- Document live **AW-005 / EC-001** Evidence Challenge (method shell only)
+- README links challenge hub + redacted stats glance
+- Bridge rule: hub URL + aggregate counts may cross; gold/scorer/KV stay private
+- Clarify AW-004 Phase 0 Markdown→HTML as expected control on research surfaces
+
 ## v0.1.1 — 2026-08-08
 
 - AW-004 phases documented (0 surface verification → 1 A–D → 2 external agents)

@@ -95,6 +95,16 @@ freeze intents → freeze rubric → HASH → run models → blind annotation �
 
 Do not author “correct answers” after seeing model outputs. Rubrics use `required_concepts` / `must_not_claim` / `constraint_checks` (see `schemas/scoring-rubric.schema.json`).
 
+## Live experiments (pointers)
+
+| ID | Theme | Live |
+|----|-------|------|
+| AW-004 | Bring Your Agent / representations | `/research/agent-web/bring-your-agent/` |
+| AW-005 | Evidence Challenge EC-001 | `/research/agent-web/evidence-challenge/` |
+
+Method shells: `experiments/AW-004/`, `experiments/AW-005/`.  
+Scorers, gold labels, and analytics dumps for EC-001 stay on the private site. Public lab may record **redacted aggregate counts** and scrubbed paste-backs only.
+
 ## Organic releases
 
 Private ingest → scrub → normalize → manual review → `datasets/organic/releases/`.

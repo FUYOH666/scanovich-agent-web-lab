@@ -26,20 +26,22 @@ We measure the equivalent **selection layer in AI agents** — operationally, no
 
 | | |
 |---|---|
-| **Try it** | [Bring Your Agent](https://scanovich.ai/research/agent-web/bring-your-agent/) — run the live probe with ChatGPT, Claude, Gemini, Perplexity, or your own agent |
-| **Read the brief** | [AW-004](https://scanovich.ai/research/agent-web/aw-004/) — representations under test |
+| **Try it** | [Bring Your Agent](https://scanovich.ai/research/agent-web/bring-your-agent/) — probe how an agent reads the live site |
+| **Evidence challenge** | [Evidence Challenge #001](https://scanovich.ai/research/agent-web/evidence-challenge/) — conflicting sources → scored truth → share |
+| **Briefs** | [AW-004](https://scanovich.ai/research/agent-web/aw-004/) · [AW-005 method](experiments/AW-005/) |
 | **Lab hub** | [scanovich.ai/research/agent-web](https://scanovich.ai/research/agent-web/) |
 
 ---
 
-### A real result (Day 1)
+### What we’ve already measured
 
-On four research surfaces, requesting Markdown (`Accept: text/markdown`) still returned HTML.
+**Phase 0 (AW-004).** On four research surfaces, `Accept: text/markdown` still returned HTML — an expected control for those paths, not a full A–D agent comparison.  
+→ [`analysis/2026-08-08-probe-dry-run.md`](analysis/2026-08-08-probe-dry-run.md)
 
-That is **Phase 0** — surface verification — not yet a full A/B/C/D agent comparison.  
+**EC-001 (AW-005).** Aggregate Live Run Statistics are public counts only (scorer gold stays private).  
+→ [`analysis/2026-08-09-ec001-stats-glance.md`](analysis/2026-08-09-ec001-stats-glance.md) · [`experiments/AW-005/`](experiments/AW-005/)
+
 Negative and unexpected results are published on purpose.
-
-→ [`results/`](results/) · [`analysis/`](analysis/2026-08-08-probe-dry-run.md)
 
 ---
 
@@ -76,7 +78,8 @@ Integrity by design: public sample prompts for demos; holdouts and scoring rubri
 |------|------------------|
 | [`METHODOLOGY.md`](METHODOLOGY.md) | Funnel, phases, Data Velocity, limitations |
 | [`schemas/`](schemas/) | Fetch / run / observation / Decision Packet |
-| [`experiments/AW-004/`](experiments/AW-004/) | Protocol shell and phase status |
+| [`experiments/AW-004/`](experiments/AW-004/) | Bring Your Agent — phases & protocol |
+| [`experiments/AW-005/`](experiments/AW-005/) | Evidence Challenge EC-001 — method shell |
 | [`probes/`](probes/) | Public runners against live URLs |
 | [`CITATION.cff`](CITATION.cff) | Cite this repository |
 
@@ -98,5 +101,5 @@ Use GitHub **Cite this repository** ([`CITATION.cff`](CITATION.cff)).
 
 <p align="center">
   <a href="https://scanovich.ai/research/agent-web/bring-your-agent/"><strong>Can your AI correctly understand this website?</strong></a><br/>
-  <sub>Bring Your Agent · Agent Web Experiment AW-004</sub>
+  <sub>AW-004 Bring Your Agent · AW-005 Evidence Challenge</sub>
 </p>
