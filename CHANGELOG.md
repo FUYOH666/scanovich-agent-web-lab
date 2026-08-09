@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.5 — 2026-08-09
+
+- Scrubbed AW-006 Perplexity Sonar half-baseline (100 runs, 4% overall mention rate)
+- Class rates: trade_customs ~15%; supplier / evidence_conflict / generic_ai_docs 0%
+- Engine-variance note vs OpenClaw smoke; OpenAI half + L3 GEO variant still private-frozen
+- Explicit non-claim: no guaranteed AI-search ranking
+
 ## v0.1.4 — 2026-08-09
 
 - Ingest scrubbed AW-006 OpenClaw smoke (`product_probe`; not a baseline)

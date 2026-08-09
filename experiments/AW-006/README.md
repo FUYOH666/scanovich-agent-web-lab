@@ -1,8 +1,9 @@
 # AW-006 — AI-search citation baseline (method note)
 
-**Status:** OpenClaw smoke ingested (scrubbed); full API baseline still pending  
+**Status:** Perplexity Sonar half-baseline ingested (scrubbed); OpenAI half pending  
 **last_verified:** 2026-08-09  
-**Parallel with:** AW-003 / AW-004 / AW-005 week ops
+**Private site:** `4.12.2`  
+**Parallel with:** AW-003 / AW-004 / AW-005
 
 ## What it is
 
@@ -10,24 +11,27 @@ A **search-grounded** measurement track: do AI search products mention / cite th
 
 Harness, blind prompts, API keys, and raw answer dumps stay on the **private** site.
 
-## Public artifacts so far
+## Public artifacts
 
 | Artifact | Path |
 |----------|------|
 | OpenClaw smoke (scrubbed) | [`analysis/2026-08-09-aw006-openclaw-smoke.md`](../../analysis/2026-08-09-aw006-openclaw-smoke.md) |
+| Perplexity baseline (scrubbed) | [`analysis/2026-08-09-aw006-perplexity-baseline.md`](../../analysis/2026-08-09-aw006-perplexity-baseline.md) |
 
-## Updated H0 (from smoke)
+## Rates so far (Perplexity, N=100)
 
-| Framing | Observation |
-|---------|-------------|
-| Ultra-specific practice fingerprint | Retrievable (1/3 valid mentions in smoke) |
-| Broader defensible / explainable language | Contested — not owned here |
-| Evidence-conflict | Reads as records discipline, not a vendor market |
+| | |
+|--|--:|
+| Overall mention rate | **4%** |
+| Best class (`trade_customs`) | ~**15%** |
+| `supplier_spreadsheet` / `evidence_conflict` / `generic_ai_docs` | **0%** |
 
-Site L3 factor remains **frozen** until a stable API baseline (`N≥5`) is reviewed.
+Engine variance: OpenClaw smoke can hit an ultra-specific fingerprint; Perplexity often does not.
 
-## May cross the bridge later
+## H0 (current)
 
-Scrubbed mention-rate summaries by prompt class — never raw answers or keys.
+Fingerprint / trade-dossier adjacency can appear; wide supplier and evidence-conflict shortlists do not default to the live domain. **No guaranteed ranking claims.**
+
+Site L3 “GEO variant” remains **frozen** until the OpenAI half is reviewed.
 
 See [`hypothesis.md`](hypothesis.md) · [`protocol.json`](protocol.json) · [`results.md`](results.md).

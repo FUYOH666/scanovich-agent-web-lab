@@ -54,10 +54,10 @@ EC-001: cite the hub + scrubbed counts. **Gold / Worker scorer stay private.**
 **EC-001 (AW-005).** Hub + stats API live; aggregate counts only (gold private).  
 → [`analysis/2026-08-09-ec001-stats-glance.md`](analysis/2026-08-09-ec001-stats-glance.md)
 
-**AW-006.** OpenClaw smoke (scrubbed): fingerprint can be retrieved; wider “defensible / explainable” framing not owned; evidence-conflict still reads as records. API baseline pending.  
-→ [`analysis/2026-08-09-aw006-openclaw-smoke.md`](analysis/2026-08-09-aw006-openclaw-smoke.md) · [`experiments/AW-006/`](experiments/AW-006/)
+**AW-006.** Perplexity Sonar half-baseline (100 runs): **4%** overall mention rate; best class trade/customs ~**15%**; supplier / evidence-conflict / generic AI-docs **0%**. OpenClaw smoke showed engine variance on fingerprint prompts. OpenAI half + any L3 site variant still frozen.  
+→ [`analysis/2026-08-09-aw006-perplexity-baseline.md`](analysis/2026-08-09-aw006-perplexity-baseline.md) · [`experiments/AW-006/`](experiments/AW-006/)
 
-Negative and unexpected results are published on purpose.
+We publish rates and negative results. We do **not** claim guaranteed AI-search ranking.
 
 ---
 
