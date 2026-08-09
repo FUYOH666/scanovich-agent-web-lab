@@ -1,10 +1,9 @@
 name: CI
 
+# Disabled for push/PR (noise / email alerts). Re-enable by restoring
+# push/pull_request triggers when ready.
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -38,7 +37,6 @@ jobs:
       - name: Link check
         uses: lycheeverse/lychee-action@v2
         with:
-          # Fail on broken links; tolerate rate limits
           args: >-
             --verbose
             --no-progress
