@@ -1,5 +1,9 @@
 # AW-006 hypothesis
 
-Search-grounded AI products will cite a live commercial domain more often for ultra-specific private-practice intents than for broad competitive shortlist intents.
+**H0 (updated after OpenClaw smoke, 2026-08-09):**
 
-Non-claims: not SEO guarantees; not a public leaderboard; raw harness outputs stay private.
+- Ultra-specific private-practice fingerprint language is already retrievable in search-grounded agents.
+- Broader “defensible / explainable document intelligence” framing is contested — ownership not established.
+- Evidence-conflict framing still classifies as records discipline more than as a buyable practice.
+
+Non-claims: not SEO guarantees; not a public leaderboard; raw harness outputs stay private. Smoke ≠ baseline.

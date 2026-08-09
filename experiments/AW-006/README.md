@@ -1,30 +1,33 @@
 # AW-006 — AI-search citation baseline (method note)
 
-**Status:** private-site harness scaffolded (`4.12.1`); full baseline not yet run  
+**Status:** OpenClaw smoke ingested (scrubbed); full API baseline still pending  
 **last_verified:** 2026-08-09  
-**Parallel with:** AW-003 / AW-004 / AW-005 week ops (does not pause them)
+**Parallel with:** AW-003 / AW-004 / AW-005 week ops
 
 ## What it is
 
-A **search-grounded** measurement track: do AI search products mention / cite the live commercial domain for a frozen blind prompt set?
+A **search-grounded** measurement track: do AI search products mention / cite the live commercial domain?
 
-Harness, blind prompts, API keys, and raw answer dumps live on the **private** site only.
+Harness, blind prompts, API keys, and raw answer dumps stay on the **private** site.
 
-## What may appear here later
+## Public artifacts so far
 
-| Allowed | Forbidden |
-|---------|-----------|
-| Scrubbed mention-rate summaries by prompt class | Full prompts if they act as answer keys for the baseline |
-| H0 outcome notes (presence / absence patterns) | Raw model answers, API keys, engine dumps |
-| Link to live lab hub | Copying private runner / `.env` |
+| Artifact | Path |
+|----------|------|
+| OpenClaw smoke (scrubbed) | [`analysis/2026-08-09-aw006-openclaw-smoke.md`](../../analysis/2026-08-09-aw006-openclaw-smoke.md) |
 
-Until a scrubbed summary is exported via the bridge, this folder is a **placeholder protocol** only.
+## Updated H0 (from smoke)
 
-## H0 (qualitative, public-safe)
+| Framing | Observation |
+|---------|-------------|
+| Ultra-specific practice fingerprint | Retrievable (1/3 valid mentions in smoke) |
+| Broader defensible / explainable language | Contested — not owned here |
+| Evidence-conflict | Reads as records discipline, not a vendor market |
 
-Ultra-specific private-practice framing → expect mentions.  
-Broad supplier-spreadsheet shortlists → expect absence until/unless a later controlled machine-surface variant is tested.
+Site L3 factor remains **frozen** until a stable API baseline (`N≥5`) is reviewed.
 
-Site factor for any L3 variant is **frozen** until baseline review (private field note).
+## May cross the bridge later
 
-See [`hypothesis.md`](hypothesis.md) · [`protocol.json`](protocol.json).
+Scrubbed mention-rate summaries by prompt class — never raw answers or keys.
+
+See [`hypothesis.md`](hypothesis.md) · [`protocol.json`](protocol.json) · [`results.md`](results.md).

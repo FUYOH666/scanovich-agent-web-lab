@@ -1,5 +1,7 @@
 # AW-006 results
 
-No public baseline yet. Full private run awaits API keys on the storefront repo.
+| Date | Artifact | Notes |
+|------|----------|-------|
+| 2026-08-09 | [`analysis/2026-08-09-aw006-openclaw-smoke.md`](../../analysis/2026-08-09-aw006-openclaw-smoke.md) | product_probe smoke; 1/3 valid mention rate; not baseline |
 
-When a scrubbed `summary` crosses the bridge, append a dated note under `analysis/` (mention rates by class only — no full answers).
+Full API baseline (`engine=all`, `repeats=5`) not yet exported to this repo.

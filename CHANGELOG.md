@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.4 — 2026-08-09
+
+- Ingest scrubbed AW-006 OpenClaw smoke (`product_probe`; not a baseline)
+- Update H0: fingerprint works; wide category contested; evidence-conflict ≈ records framing
+- No L3 site claims; raw runs remain private
+
 ## v0.1.3 — 2026-08-09
 
 - Re-verify EC-001 hub live (HTTP 200) after private site `4.12.0`

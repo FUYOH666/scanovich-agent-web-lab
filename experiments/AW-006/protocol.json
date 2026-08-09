@@ -1,7 +1,7 @@
 {
   "experiment_id": "AW-006",
   "title": "AI-search citation baseline",
-  "status": "baseline_pending_private_keys",
+  "status": "smoke_openclaw_ingested_baseline_pending",
   "live": {
     "lab_hub": "https://scanovich.ai/research/agent-web/"
   },

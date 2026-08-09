@@ -54,8 +54,8 @@ EC-001: cite the hub + scrubbed counts. **Gold / Worker scorer stay private.**
 **EC-001 (AW-005).** Hub + stats API live; aggregate counts only (gold private).  
 → [`analysis/2026-08-09-ec001-stats-glance.md`](analysis/2026-08-09-ec001-stats-glance.md)
 
-**AW-006.** AI-search citation harness runs privately; this repo will only publish scrubbed mention-rate summaries when exported.  
-→ [`experiments/AW-006/`](experiments/AW-006/)
+**AW-006.** OpenClaw smoke (scrubbed): fingerprint can be retrieved; wider “defensible / explainable” framing not owned; evidence-conflict still reads as records. API baseline pending.  
+→ [`analysis/2026-08-09-aw006-openclaw-smoke.md`](analysis/2026-08-09-aw006-openclaw-smoke.md) · [`experiments/AW-006/`](experiments/AW-006/)
 
 Negative and unexpected results are published on purpose.
 
