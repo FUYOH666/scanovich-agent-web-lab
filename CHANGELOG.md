@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.3 — 2026-08-09
+
+- Re-verify EC-001 hub live (HTTP 200) after private site `4.12.0`
+- README live-canon table (hub, EC-001, stats, BYA, AW-004)
+- AW-006 method placeholder (AI-search citation baseline; scrubbed summaries only later)
+- Bridge notes: no harness dumps / API keys in public git
+
 ## v0.1.2 — 2026-08-09
 
 - Document live **AW-005 / EC-001** Evidence Challenge (method shell only)

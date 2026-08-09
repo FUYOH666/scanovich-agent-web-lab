@@ -3,7 +3,7 @@
 **Live hub:** https://scanovich.ai/research/agent-web/evidence-challenge/  
 **Aggregate stats (redacted counts):** https://scanovich.ai/api/evidence-challenge/001/stats  
 **Lab hub:** https://scanovich.ai/research/agent-web/  
-**last_verified:** 2026-08-09
+**last_verified:** 2026-08-09 (hub HTTP 200 after private site 4.12.0)
 
 ## What it is
 
@@ -29,6 +29,6 @@ AW-005 measures **evidence conflict resolution** and share/referral loops. Both 
 | Surface | Notes |
 |---------|--------|
 | Stats API | Live (aggregate counts only) |
-| Challenge HTML | Deployed with the private site release that ships the UI |
+| Challenge HTML | Live (`4.12.0`) |
 
 See [`hypothesis.md`](hypothesis.md) · [`protocol.json`](protocol.json).

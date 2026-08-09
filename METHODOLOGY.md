@@ -97,13 +97,14 @@ Do not author “correct answers” after seeing model outputs. Rubrics use `req
 
 ## Live experiments (pointers)
 
-| ID | Theme | Live |
-|----|-------|------|
+| ID | Theme | Live / status |
+|----|-------|----------------|
 | AW-004 | Bring Your Agent / representations | `/research/agent-web/bring-your-agent/` |
-| AW-005 | Evidence Challenge EC-001 | `/research/agent-web/evidence-challenge/` |
+| AW-005 | Evidence Challenge EC-001 | `/research/agent-web/evidence-challenge/` + stats API |
+| AW-006 | AI-search citation baseline | Private harness; public = scrubbed mention rates later |
 
-Method shells: `experiments/AW-004/`, `experiments/AW-005/`.  
-Scorers, gold labels, and analytics dumps for EC-001 stay on the private site. Public lab may record **redacted aggregate counts** and scrubbed paste-backs only.
+Method shells: `experiments/AW-004/` … `AW-006/`.  
+EC-001 scorers/gold and AW-006 raw harness dumps stay private. Public lab may record **redacted aggregate counts**, scrubbed paste-backs, and (later) mention-rate summaries only.
 
 ## Organic releases
 

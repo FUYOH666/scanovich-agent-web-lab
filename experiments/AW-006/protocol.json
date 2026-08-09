@@ -1,0 +1,22 @@
+{
+  "experiment_id": "AW-006",
+  "title": "AI-search citation baseline",
+  "status": "baseline_pending_private_keys",
+  "live": {
+    "lab_hub": "https://scanovich.ai/research/agent-web/"
+  },
+  "public_artifacts": [
+    "experiments/AW-006/",
+    "analysis/ scrubbed mention-rate summaries when exported"
+  ],
+  "private_site_only": [
+    "ai_search_harness_runner",
+    "blind_prompt_json",
+    "openai_perplexity_api_keys",
+    "raw_answer_dumps",
+    "metrics_ai_search_dir"
+  ],
+  "bridge": "Private site PUBLIC_LAB_BRIDGE.md — AI-search baseline summary (mention rates by prompt class; no full answers) may cross after scrub",
+  "site_factor": "frozen_until_baseline_reviewed",
+  "parallel_with": ["AW-003", "AW-004", "AW-005"]
+}

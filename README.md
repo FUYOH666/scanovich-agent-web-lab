@@ -22,24 +22,40 @@ We measure the equivalent **selection layer in AI agents** — operationally, no
 
 ---
 
+### Live canon
+
+| Surface | URL |
+|---------|-----|
+| Lab hub | https://scanovich.ai/research/agent-web/ |
+| Evidence Challenge (AW-005 / EC-001) | https://scanovich.ai/research/agent-web/evidence-challenge/ |
+| EC-001 stats (counts only) | https://scanovich.ai/api/evidence-challenge/001/stats |
+| Bring Your Agent (AW-004) | https://scanovich.ai/research/agent-web/bring-your-agent/ |
+| AW-004 brief | https://scanovich.ai/research/agent-web/aw-004/ |
+
+EC-001: cite the hub + scrubbed counts. **Gold / Worker scorer stay private.**
+
+---
+
 ### Start here
 
 | | |
 |---|---|
 | **Try it** | [Bring Your Agent](https://scanovich.ai/research/agent-web/bring-your-agent/) — probe how an agent reads the live site |
 | **Evidence challenge** | [Evidence Challenge #001](https://scanovich.ai/research/agent-web/evidence-challenge/) — conflicting sources → scored truth → share |
-| **Briefs** | [AW-004](https://scanovich.ai/research/agent-web/aw-004/) · [AW-005 method](experiments/AW-005/) |
-| **Lab hub** | [scanovich.ai/research/agent-web](https://scanovich.ai/research/agent-web/) |
+| **Method notes** | [AW-004](experiments/AW-004/) · [AW-005](experiments/AW-005/) · [AW-006](experiments/AW-006/) |
 
 ---
 
 ### What we’ve already measured
 
-**Phase 0 (AW-004).** On four research surfaces, `Accept: text/markdown` still returned HTML — an expected control for those paths, not a full A–D agent comparison.  
+**Phase 0 (AW-004).** On four research surfaces, `Accept: text/markdown` still returned HTML — an expected control for those paths.  
 → [`analysis/2026-08-08-probe-dry-run.md`](analysis/2026-08-08-probe-dry-run.md)
 
-**EC-001 (AW-005).** Aggregate Live Run Statistics are public counts only (scorer gold stays private).  
-→ [`analysis/2026-08-09-ec001-stats-glance.md`](analysis/2026-08-09-ec001-stats-glance.md) · [`experiments/AW-005/`](experiments/AW-005/)
+**EC-001 (AW-005).** Hub + stats API live; aggregate counts only (gold private).  
+→ [`analysis/2026-08-09-ec001-stats-glance.md`](analysis/2026-08-09-ec001-stats-glance.md)
+
+**AW-006.** AI-search citation harness runs privately; this repo will only publish scrubbed mention-rate summaries when exported.  
+→ [`experiments/AW-006/`](experiments/AW-006/)
 
 Negative and unexpected results are published on purpose.
 
@@ -80,6 +96,7 @@ Integrity by design: public sample prompts for demos; holdouts and scoring rubri
 | [`schemas/`](schemas/) | Fetch / run / observation / Decision Packet |
 | [`experiments/AW-004/`](experiments/AW-004/) | Bring Your Agent — phases & protocol |
 | [`experiments/AW-005/`](experiments/AW-005/) | Evidence Challenge EC-001 — method shell |
+| [`experiments/AW-006/`](experiments/AW-006/) | AI-search citation baseline — placeholder until scrubbed summary |
 | [`probes/`](probes/) | Public runners against live URLs |
 | [`CITATION.cff`](CITATION.cff) | Cite this repository |
 

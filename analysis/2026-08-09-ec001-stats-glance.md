@@ -4,7 +4,7 @@
 **Experiment:** AW-005 / EC-001  
 **Basket:** mixed (API exposes aggregates only — treat as lab instrumentation, not organic proof)  
 **Source:** `GET https://scanovich.ai/api/evidence-challenge/001/stats`  
-**last_verified:** 2026-08-09
+**last_verified:** 2026-08-09 (hub re-check after private site 4.12.0 deploy)
 
 ## Redacted counts (point-in-time)
 
@@ -21,10 +21,10 @@
 
 | URL | HTTP |
 |-----|-----:|
-| `/api/evidence-challenge/001/stats` | 200 |
-| `/research/agent-web/evidence-challenge/` | 404 at verification time |
+| https://scanovich.ai/api/evidence-challenge/001/stats | 200 |
+| https://scanovich.ai/research/agent-web/evidence-challenge/ | 200 |
 
-Challenge HTML ships with the private site deploy; stats Worker was already live. Re-verify hub URL after Render catches up.
+Both hub and stats API are live. Gold answers and Worker scorer remain private.
 
 ## Integrity
 
